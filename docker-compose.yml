@@ -1,0 +1,10 @@
+version: '3'
+services:
+  python:
+    restart: always
+    build: .
+    container_name: 'container_math-for-ai'
+    working_dir: '/root/'
+    tty: true
+    volumes:
+      - ./applications:/root/applications

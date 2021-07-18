@@ -1,0 +1,6 @@
+MAIN_URL: 'https://suumo.jp/jj/chintai/ichiran/FR301FC005/?ar=030&bs=040&ra=012&rn=0025&ek=002538520&cb=0.0&ct=9999999&mb=0&mt=9999999&md=06&et=9999999&cn=9999999&shkr1=03&shkr2=03&shkr3=03&shkr4=03&sngz=&po1=25&po2=99&pc=100&page='
+DIRECTORY:
+  BACKUP_DIR_NAME:
+
+
+BACKUP_FILE_NAME: 'house_price.csv'
