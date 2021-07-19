@@ -29,7 +29,6 @@ def initialize(x: ndarray, yt: ndarray, is_logging=False) -> ndarray:
 
     yp, yd = 0, 0
 
-
     for k in range(iters):
         # 予測値の計算 (7.8.1)
         yp = pred(x, w)

@@ -29,3 +29,7 @@ def get_log_file_path() -> str:
 
 def get_price_file_path() -> str:
     return os.path.abspath('../templates/house_price.csv')
+
+
+def get_png_file_path() -> str:
+    return os.path.abspath('../templates') + '/'

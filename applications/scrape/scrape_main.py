@@ -5,9 +5,9 @@ import time
 from typing import List, Tuple, Any
 from pathlib import Path
 
-from applications.config.config_getter import config_initialize
+from applications.config import config_getter
 
-config = config_initialize()
+config = config_getter.config_initialize()
 path = Path(__file__).parent
 
 
@@ -18,10 +18,8 @@ def initializingModelData() -> str:
     Return csv file name
     :return: csv filename
     """
-    global path
-    print(path)
-    path /= '../ML_learning/templates'
-    file = str(path.resolve()) + '/' + config['BACKUP_FILE_NAME']
+    path = config_getter.get_templates_directory()
+    file = path + '/' + config['BACKUP_FILE_NAME']
 
     with open(file, 'w') as f:
         writer = csv.writer(f)
@@ -32,8 +30,6 @@ def initializingModelData() -> str:
 
 
 def getHyperTextMarkUpText(num: int) -> BeautifulSoup:
-    # url = config['MAIN_URL']
-
     response = request.urlopen(config['MAIN_URL'] + str(num))
     soup = BeautifulSoup(response)
     response.close()
@@ -74,16 +70,6 @@ def createData(soup_data):
             age_trim_start_index = age_remove_new_line[i].rfind('築') + 1
             age_trim_end_index = age_remove_new_line[i].rfind('年')
 
-            print(name[i].get_text(), )
-            print(far_from_station_only_myoden[i].get_text()[
-                  far_from_station_trim_start_index: far_from_station_trim_end_index], )
-            print(age_remove_new_line[i][age_trim_start_index: age_trim_end_index], )
-            # floor_plan[i].get_text(),
-            print(price_remove_char[i])
-            print(management_price_list_remove_other_rows[i])
-            print(price_remove_char[i] + management_price_list_remove_other_rows[i])
-            print('*' * 22)
-
             result.append((
                 # name[i].get_text(),
                 far_from_station_only_myoden[i].get_text()[
@@ -103,7 +89,7 @@ def createData(soup_data):
 def generateCsv(csvList: List[Tuple[Any, Any, float, float, float]], file):
     global path
     print(path)
-    path /= '../templates'
+    path = config_getter.get_templates_directory()
 
     for farFrom, age, price, managementPrice, totalPrice in csvList:
         print(farFrom, age, price, managementPrice, totalPrice)
