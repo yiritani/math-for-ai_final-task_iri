@@ -25,7 +25,8 @@ def initializingModelData() -> str:
     file = str(path.resolve()) + '/' + config['BACKUP_FILE_NAME']
     with open(file, 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(['Name','FarFromStation','Age','Price','ManagementPrice','TotalPrice'])
+        # writer.writerow(['Name','FarFromStation','Age','Price','ManagementPrice','TotalPrice'])
+        writer.writerow(['FarFromStation', 'Age', 'Price', 'ManagementPrice', 'TotalPrice'])
 
     return file
 
@@ -84,7 +85,7 @@ def createData(soup_data):
             print('*' * 22)
 
             result.append((
-                name[i].get_text(),
+                # name[i].get_text(),
                 far_from_station_only_myoden[i].get_text()[
                 far_from_station_trim_start_index: far_from_station_trim_end_index],
                 age_remove_new_line[i][age_trim_start_index: age_trim_end_index],
@@ -111,11 +112,12 @@ def generateCsv(csvList: List[Tuple[str]], file):
     # print(path.resolve())
     # file = str(path.resolve()) + '/' + config['BACKUP_FILE_NAME']
 
-    for name, farFrom, age, price, managementPrice, totalPrice in csvList:
-        print(name, farFrom, age, price, managementPrice, totalPrice)
+    for farFrom, age, price, managementPrice, totalPrice in csvList:
+        print(farFrom, age, price, managementPrice, totalPrice)
         with open(file, 'a') as f:
             writer = csv.writer(f)
-            writer.writerow([name, farFrom, age, price, managementPrice, totalPrice])
+            # writer.writerow([name, farFrom, age, price, managementPrice, totalPrice])
+            writer.writerow([farFrom, age, price, managementPrice, totalPrice])
 
 
 def scrape_main_func():
