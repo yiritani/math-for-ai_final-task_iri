@@ -2,13 +2,13 @@ from bs4 import BeautifulSoup
 from urllib import request
 import csv
 import time
-from typing import List, Tuple
+from typing import List, Tuple, Any
 from pathlib import Path
-import yaml
 
+from applications.config.config_getter import config_initialize
+
+config = config_initialize()
 path = Path(__file__).parent
-with open(str(path) + '/config.yml') as yml:
-    config = yaml.load(yml)
 
 
 def initializingModelData() -> str:
@@ -21,8 +21,8 @@ def initializingModelData() -> str:
     global path
     print(path)
     path /= '../ML_learning/templates'
-    # print(path.resolve())
     file = str(path.resolve()) + '/' + config['BACKUP_FILE_NAME']
+
     with open(file, 'w') as f:
         writer = csv.writer(f)
         # writer.writerow(['Name','FarFromStation','Age','Price','ManagementPrice','TotalPrice'])
@@ -94,38 +94,28 @@ def createData(soup_data):
                 price_remove_char[i] + management_price_list_remove_other_rows[i]
             ))
 
-            # result.append((name[i]))
-
-            # result.append((name[i].get_text(), far_from_station.get_text(), age[i].get_text(), floor_plan[i].get_text(), price[i].get_text(),))
-
         return result
 
-    except IndexError as indexerror:
-        print(indexerror)
-        return result
+    except:
+        pass
 
 
-def generateCsv(csvList: List[Tuple[str]], file):
+def generateCsv(csvList: List[Tuple[Any, Any, float, float, float]], file):
     global path
     print(path)
     path /= '../templates'
-    # print(path.resolve())
-    # file = str(path.resolve()) + '/' + config['BACKUP_FILE_NAME']
 
     for farFrom, age, price, managementPrice, totalPrice in csvList:
         print(farFrom, age, price, managementPrice, totalPrice)
         with open(file, 'a') as f:
             writer = csv.writer(f)
-            # writer.writerow([name, farFrom, age, price, managementPrice, totalPrice])
             writer.writerow([farFrom, age, price, managementPrice, totalPrice])
 
 
 def scrape_main_func():
     file_name = initializingModelData()
 
-    cnt = 0
-
-    for page_num in range(1, 6):
+    for page_num in range(1, 9):
         suumo_html = getHyperTextMarkUpText(page_num)
         rows = createData(suumo_html)
 

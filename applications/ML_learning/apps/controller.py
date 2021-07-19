@@ -1,5 +1,5 @@
-import learning
+import learning_main
 
 
 if __name__ == '__main__':
-    learning
+    learning_main
