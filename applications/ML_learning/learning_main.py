@@ -1,14 +1,13 @@
 import numpy as np
-from numpy import ndarray
 
 from utils import data_processing, calc, show_plot
-from applications.config import config_getter
+from utils.config import config_getter
 
 config = config_getter.config_initialize()
 np.set_printoptions(suppress=True, precision=3)
 
 
-def generatePredictModel() -> tuple[ndarray, ndarray]:
+def generatePredictModel():
     with open(config_getter.get_price_file_path(), 'r') as fd:
         feature_names = np.array(fd.read().split('\n')[0].split(','))
 

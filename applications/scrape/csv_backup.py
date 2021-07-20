@@ -2,11 +2,10 @@ import os
 import datetime
 import glob
 import shutil
-from applications.config import config_getter
-
+from config import config_getter
 
 config = config_getter.config_initialize()
-resource_filename = config['BACKUP_FILE_NAME']
+resource_filename = config['FILE']['BACKUP_FILE_NAME']
 MAX_FILES = 2
 
 
@@ -29,7 +28,7 @@ def backupCsvFile():
         for i in range(del_num):
             os.remove(file_list[i])
 
-    shutil.copy(str(templates_path) + '/' + resource_filename, backup_file_full_path)
+    shutil.copy(str(templates_path) + resource_filename, backup_file_full_path)
     # logger.info('from backup')
 
 

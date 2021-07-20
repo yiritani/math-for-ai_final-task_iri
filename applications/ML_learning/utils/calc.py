@@ -1,7 +1,7 @@
 import numpy as np
 from numpy import ndarray
 
-from applications.config import config_getter
+from .config import config_getter
 
 config = config_getter.config_initialize()
 

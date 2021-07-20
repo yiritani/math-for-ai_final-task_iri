@@ -5,7 +5,7 @@ import time
 from typing import List, Tuple, Any
 from pathlib import Path
 
-from applications.config import config_getter
+from config import config_getter
 
 config = config_getter.config_initialize()
 path = Path(__file__).parent
@@ -19,7 +19,7 @@ def initializingModelData() -> str:
     :return: csv filename
     """
     path = config_getter.get_templates_directory()
-    file = path + '/' + config['BACKUP_FILE_NAME']
+    file = path + '/' + config['FILE']['BACKUP_FILE_NAME']
 
     with open(file, 'w') as f:
         writer = csv.writer(f)
