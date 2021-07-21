@@ -88,7 +88,7 @@ def createData(soup_data):
 
 def generateCsv(csvList: List[Tuple[Any, Any, float, float, float]], file):
     global path
-    print(path)
+    # print(path)
     path = config_getter.get_templates_directory()
 
     for farFrom, age, price, managementPrice, totalPrice in csvList:
@@ -101,10 +101,16 @@ def generateCsv(csvList: List[Tuple[Any, Any, float, float, float]], file):
 def scrape_main_func():
     file_name = initializingModelData()
 
-    for page_num in range(1, 9):
+    for page_num in range(1, 100):
         suumo_html = getHyperTextMarkUpText(page_num)
         rows = createData(suumo_html)
 
         generateCsv(rows, file_name)
+
+        if len(rows) <= 0:
+            print('END')
+            break
+
+        print(f'=== page {page_num} done ===')
 
         time.sleep(10)

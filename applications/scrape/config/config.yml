@@ -1,4 +1,5 @@
-MAIN_URL: 'https://suumo.jp/jj/chintai/ichiran/FR301FC005/?ar=030&bs=040&ra=012&rn=0025&ek=002504690&cb=0.0&ct=9999999&mb=0&mt=9999999&md=06&et=9999999&cn=9999999&shkr1=03&shkr2=03&shkr3=03&shkr4=03&sngz=&po1=25&po2=99&pc=100&page='
+MAIN_URL: 'https://suumo.jp/jj/chintai/ichiran/FR301FC005/?ar=030&bs=040&ra=012&rn=0025&ek=002504690&ek=002512030&ek=002538520&ek=002529360&cb=0.0&ct=9999999&mb=0&mt=9999999&md=06&et=9999999&cn=9999999&shkr1=03&shkr2=03&shkr3=03&shkr4=03&sngz=&po1=25&po2=99&pc=100&page='
+#MAIN_URL: 'https://suumo.jp/jj/chintai/ichiran/FR301FC005/?ar=030&bs=040&ra=012&rn=0025&ek=002538520&cb=0.0&ct=9999999&mb=0&mt=9999999&md=02&md=03&md=04&md=05&md=06&md=07&et=5&cn=3&shkr1=03&shkr2=03&shkr3=03&shkr4=03&sngz=&po1=25&po2=99&pc=10&page='
 
 
 FILE:
@@ -7,7 +8,7 @@ FILE:
 
 DIRECTORY:
   SCRAPE_BASE_DIR: '/applications/scrape/'
-  ML_LEARNING_BASE_DIR: '/applications/ML_learning/'
+  ML_LEARNING_BASE_DIR: '/ML_learning/'
 
 DATA_PROCESS:
   ITERS: 50000
