@@ -11,7 +11,7 @@ config = config_getter.config_initialize()
 path = Path(__file__).parent
 
 
-def initializing_nodel_data() -> str:
+def initializing_model_data() -> str:
     """
     Create csv header for input data
     and
@@ -98,7 +98,7 @@ def generate_csv(csvList: List[Tuple[Any, Any, float, float, float]], file):
 
 
 def scrape_main_func():
-    file_name = initializing_nodel_data()
+    file_name = initializing_model_data()
 
     for page_num in range(1, 100):
         suumo_html = get_hyper_text_mark_up_text(page_num)
