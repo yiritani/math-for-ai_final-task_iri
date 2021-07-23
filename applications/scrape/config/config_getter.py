@@ -2,6 +2,8 @@ import os.path
 from pathlib import Path
 import yaml
 
+# 2021/7/21 とりあえず動かすことを念頭にしてたら凄まじく汚くなった。。。センス無さすぎ、、、
+
 path = Path(__file__).parent
 with open(str(path) + '/config.yml') as yml:
     config = yaml.load(yml)
@@ -16,11 +18,11 @@ def config_initialize():
 
 
 def get_backup_directory() -> str:
-    return os.path.abspath('../') + config['DIRECTORY']['ML_LEARNING_BASE_DIR'] + '/templates/backup/'
+    return os.path.abspath('./') + '/applications' + config['DIRECTORY']['ML_LEARNING_BASE_DIR'] + 'templates/backup/'
 
 
 def get_templates_directory() -> str:
-    return os.path.abspath('../') + config['DIRECTORY']['ML_LEARNING_BASE_DIR'] + '/templates/'
+    return os.path.abspath('./') + '/applications' + config['DIRECTORY']['ML_LEARNING_BASE_DIR'] + 'templates/'
 
 
 def get_logs_directory() -> str:

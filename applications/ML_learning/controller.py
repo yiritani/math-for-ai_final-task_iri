@@ -27,6 +27,10 @@ if __name__ == '__main__':
     # 回帰直線のスタートと終了地点を生成
     reg_start, reg_end = calc.generateRegressionLine(normalized_x, w)
 
+    # home_station = float(input('How many minutes is your house from the station? '))
+    # home_age = float(input('How old is your house?' ))
+    # home_price = float(input('How price is your house? '))
+
     # 我が家の条件正規化
     my_home_normalized_x = (config['MY_HOME_TERM']['FAR_FROM_STATION'] + config['MY_HOME_TERM']['AGE'] - mean_x) / std_x
     my_home_y = config['MY_HOME_TERM']['PRICE']

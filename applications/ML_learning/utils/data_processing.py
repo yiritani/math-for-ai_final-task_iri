@@ -1,6 +1,6 @@
 import numpy as np
 
-from applications.ML_learning.utils.config import config_getter
+from .config import config_getter
 
 
 def generatePredictModel():
@@ -10,7 +10,7 @@ def generatePredictModel():
     csv_data = np.loadtxt(config_getter.get_price_file_path(), delimiter=',', skiprows=1)
 
     learning_data = csv_data[:, np.logical_or(feature_names == 'FarFromStation', feature_names == 'Age')]
-    learning_data = np.array([i[0] + i[1] for i in learning_data])  # 係数っぽくするためにとりあえず駅徒歩と築年数は足してみた。多分改善の余地あり
+    learning_data = np.array([i[0] + i[1] for i in learning_data])  # とりあえず駅徒歩と築年数は足してみた。多分改善の余地あり
 
     true_data = csv_data[:, feature_names == 'TotalPrice']
     true_data = np.array([i[0] for i in true_data])
