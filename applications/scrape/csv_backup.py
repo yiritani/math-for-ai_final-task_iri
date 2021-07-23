@@ -30,11 +30,3 @@ def backup_csv_file():
 
     shutil.copy(str(templates_path) + resource_filename, backup_file_full_path)
     # logger.info('from backup')
-
-
-if __name__ == '__main__':
-    backup_csv_file()
-    # write_log('aaa')
-    # print(__name__)
-    # log_util = ApplicationLog()
-    # log_util.write_log()

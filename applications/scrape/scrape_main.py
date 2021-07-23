@@ -86,9 +86,7 @@ def create_data(soup_data):
 
 
 def generate_csv(csvList: List[Tuple[Any, Any, float, float, float]], file):
-    global path
-    # print(path)
-    path = config_getter.get_templates_directory()
+    config_getter.get_templates_directory()
 
     for farFrom, age, price, managementPrice, totalPrice in csvList:
         print(farFrom, age, price, managementPrice, totalPrice)
