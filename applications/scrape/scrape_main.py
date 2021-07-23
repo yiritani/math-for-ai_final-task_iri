@@ -11,7 +11,7 @@ config = config_getter.config_initialize()
 path = Path(__file__).parent
 
 
-def initializingModelData() -> str:
+def initializing_nodel_data() -> str:
     """
     Create csv header for input data
     and
@@ -29,7 +29,7 @@ def initializingModelData() -> str:
     return file
 
 
-def getHyperTextMarkUpText(num: int) -> BeautifulSoup:
+def get_hyper_text_mark_up_text(num: int) -> BeautifulSoup:
     response = request.urlopen(config['MAIN_URL'] + str(num))
     soup = BeautifulSoup(response)
     response.close()
@@ -37,7 +37,7 @@ def getHyperTextMarkUpText(num: int) -> BeautifulSoup:
     return soup
 
 
-def createData(soup_data):
+def create_data(soup_data):
     result = []
     try:
         name = soup_data.find_all('a', class_='js-cassetLinkHref')
@@ -49,7 +49,7 @@ def createData(soup_data):
 
         # タグや改行など除去
         far_from_station_only_myoden = [i.find('div', style="font-weight:bold") for i in far_from_station if
-                                        not 'detailnote-box-item' in str(i)]
+                                        'detailnote-box-item' not in str(i)]
         age_remove_new_line = [i.get_text().replace('\n', '') for i in age if '<!-- 築年 -->' in str(i)]
         price_remove_char = [float(i.get_text().replace('万円', '')) for i in price]
 
@@ -72,8 +72,7 @@ def createData(soup_data):
 
             result.append((
                 # name[i].get_text(),
-                far_from_station_only_myoden[i].get_text()[
-                far_from_station_trim_start_index: far_from_station_trim_end_index],
+                far_from_station_only_myoden[i].get_text()[far_from_station_trim_start_index: far_from_station_trim_end_index],
                 age_remove_new_line[i][age_trim_start_index: age_trim_end_index],
                 price_remove_char[i],
                 management_price_list_remove_other_rows[i],
@@ -86,7 +85,7 @@ def createData(soup_data):
         pass
 
 
-def generateCsv(csvList: List[Tuple[Any, Any, float, float, float]], file):
+def generate_csv(csvList: List[Tuple[Any, Any, float, float, float]], file):
     global path
     # print(path)
     path = config_getter.get_templates_directory()
@@ -99,13 +98,13 @@ def generateCsv(csvList: List[Tuple[Any, Any, float, float, float]], file):
 
 
 def scrape_main_func():
-    file_name = initializingModelData()
+    file_name = initializing_nodel_data()
 
     for page_num in range(1, 100):
-        suumo_html = getHyperTextMarkUpText(page_num)
-        rows = createData(suumo_html)
+        suumo_html = get_hyper_text_mark_up_text(page_num)
+        rows = create_data(suumo_html)
 
-        generateCsv(rows, file_name)
+        generate_csv(rows, file_name)
 
         if len(rows) <= 0:
             print('END')

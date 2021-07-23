@@ -9,7 +9,7 @@ resource_filename = config['FILE']['BACKUP_FILE_NAME']
 MAX_FILES = 2
 
 
-def backupCsvFile():
+def backup_csv_file():
     now = datetime.datetime.now()
 
     templates_path = config_getter.get_templates_directory()
@@ -33,7 +33,7 @@ def backupCsvFile():
 
 
 if __name__ == '__main__':
-    backupCsvFile()
+    backup_csv_file()
     # write_log('aaa')
     # print(__name__)
     # log_util = ApplicationLog()

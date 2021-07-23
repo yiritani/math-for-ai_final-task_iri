@@ -10,7 +10,7 @@ def pred(x, w):
     return x @ w
 
 
-def generateRegressionLine(normalize, w):
+def generate_regression_line(normalize, w):
     xl = np.array([[1, normalize.min()], [1, normalize.max()]])
     yl = pred(xl, w)
 

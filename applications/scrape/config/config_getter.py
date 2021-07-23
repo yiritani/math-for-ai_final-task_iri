@@ -2,7 +2,7 @@ import os.path
 from pathlib import Path
 import yaml
 
-# 2021/7/21 とりあえず動かすことを念頭にしてたら凄まじく汚くなった。。。センス無さすぎ、、、
+# 清書予定
 
 path = Path(__file__).parent
 with open(str(path) + '/config.yml') as yml:

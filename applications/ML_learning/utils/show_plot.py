@@ -4,7 +4,7 @@ from .config import config_getter
 config = config_getter.config_initialize()
 
 
-def showScatterRegression(x, yt, xl, yl, my_home_x=None, my_home_y=None):
+def show_scatter_regression(x, yt, xl, yl, my_home_x=None, my_home_y=None):
     # 散布図と回帰直線の描画
     plt.figure(figsize=(6, 6))
     plt.scatter(x, yt, s=10, c='b')
