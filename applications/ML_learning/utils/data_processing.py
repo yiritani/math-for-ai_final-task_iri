@@ -10,7 +10,7 @@ def generate_predict_model():
     csv_data = np.loadtxt(config_getter.get_price_file_path(), delimiter=',', skiprows=1)
 
     learning_data = csv_data[:, np.logical_or(feature_names == 'FarFromStation', feature_names == 'Age')]
-    learning_data = np.array([i[0] + i[1] for i in learning_data])  # とりあえず駅徒歩と築年数は足してみた。多分改善の余地あり
+    learning_data = np.array([i[0] / 2 + i[1] for i in learning_data])  # とりあえず駅徒歩と築年数は足してみた。多分改善の余地あり
 
     true_data = csv_data[:, feature_names == 'TotalPrice']
     true_data = np.array([i[0] for i in true_data])
