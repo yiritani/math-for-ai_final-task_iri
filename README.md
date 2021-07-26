@@ -67,7 +67,7 @@ docker run math-for-ai_iritani_last-task python applications/ML_learning/control
 
 3.コンテナ内に出力されたpngのプロットをローカルにコピーし、表示する
 ```
-docker run math-for-ai_iritani_last-task python applications/ML_learning/controller.py
+docker cp `docker ps | grep iri-container_math-for-ai | awk '{print $1}'`:/root/applications/ML_learning/output/ScatterRegression.png . ; open ScatterRegression.png
 ```
 
 ***
