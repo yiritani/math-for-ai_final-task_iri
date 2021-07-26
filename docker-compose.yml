@@ -1,6 +1,6 @@
 version: '3'
 services:
-  python:
+  iritani_last-task:
     restart: always
     build: .
     container_name: 'iri-container_math-for-ai'

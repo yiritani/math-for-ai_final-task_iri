@@ -14,12 +14,9 @@ ENV TERM xterm
 COPY requirements.txt .
 
 RUN apt-get install -y vim less
-RUN apt-get install -y python3-tk
 
 RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
-WORKDIR root/
-
-#RUN python applications/ML_learning/controller.py
+COPY applications applications/

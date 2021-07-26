@@ -4,7 +4,7 @@ import yaml
 
 path = Path(__file__).parent
 with open(str(path) + '/utils/config/config.yml') as yml:
-    config = yaml.load(yml)
+    config = yaml.safe_load(yml)
 
 
 if __name__ == '__main__':

@@ -4,15 +4,15 @@ import yaml
 
 path = Path(__file__).parent
 with open(str(path) + '/config.yml') as yml:
-    config = yaml.load(yml)
+    config_local = yaml.safe_load(yml)
 
 
 def config_initialize():
     path = Path(__file__).parent
     with open(str(path) + '/config.yml') as yml:
-        config = yaml.load(yml)
+        config_init = yaml.safe_load(yml)
 
-    return config
+    return config_init
 
 
 def get_backup_directory() -> str:
@@ -32,8 +32,8 @@ def get_log_file_path() -> str:
 
 
 def get_price_file_path() -> str:
-    return os.path.abspath('') + config['DIRECTORY']['ML_LEARNING_BASE_DIR'] + '/templates/house_price.csv'
+    return os.path.abspath('') + config_local['DIRECTORY']['ML_LEARNING_BASE_DIR'] + '/templates/house_price.csv'
 
 
 def get_png_file_path() -> str:
-    return os.path.abspath('') + config['DIRECTORY']['ML_LEARNING_BASE_DIR'] + '/output/'
+    return os.path.abspath('') + config_local['DIRECTORY']['ML_LEARNING_BASE_DIR'] + '/output/'
