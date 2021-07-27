@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # home_price = float(input('How price is your house? '))
 
     # 我が家の条件正規化
-    my_home_normalized_x = (config['MY_HOME_TERM']['FAR_FROM_STATION'] + config['MY_HOME_TERM']['AGE'] - mean_x) / std_x
+    my_home_normalized_x = ((config['MY_HOME_TERM']['FAR_FROM_STATION'] / 2.0) + config['MY_HOME_TERM']['AGE'] - mean_x) / std_x
     my_home_y = config['MY_HOME_TERM']['PRICE']
 
     # 散布図と回帰直線の描画

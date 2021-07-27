@@ -8,7 +8,7 @@ FILE:
 
 DIRECTORY:
   SCRAPE_BASE_DIR: '/applications/scrape/'
-  ML_LEARNING_BASE_DIR: '/ML_learning/'
+  ML_LEARNING_BASE_DIR: '/machine_learning/'
 
 DATA_PROCESS:
   ITERS: 50000

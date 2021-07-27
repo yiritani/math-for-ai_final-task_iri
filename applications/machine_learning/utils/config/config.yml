@@ -5,7 +5,7 @@ FILE:
   PNG_FILE_NAME: 'ScatterRegression.png'
 
 DIRECTORY:
-  ML_LEARNING_BASE_DIR: '/applications/ML_learning/'
+  ML_LEARNING_BASE_DIR: '/applications/machine_learning/'
 
 DATA_PROCESS:
   ITERS: 50000
