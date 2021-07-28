@@ -8,3 +8,7 @@ services:
     tty: true
     volumes:
       - ./applications:/root/applications
+    ports:
+      - "5000:5000"
+    environment:
+      TZ: Asia/Tokyo

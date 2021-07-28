@@ -1,9 +1,6 @@
 import base64
 import os
 
-import numpy as np
-from PIL import Image
-from io import BytesIO
 from flask import *
 from scrape import csv_backup
 from scrape import scrape_main
@@ -49,4 +46,4 @@ def show_plot():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=8888, threaded=True)
+    app.run(debug=True, host='0.0.0.0')
