@@ -16,7 +16,10 @@ def red():
 
 @app.route("/index", methods=["GET", "POST"])
 def main_page():
-    return render_template("index.html")
+    fp = open(str(os.path.dirname(__file__)) + "/templates/img/suumo.png", "rb")
+    sp = base64.b64encode(fp.read()).decode()
+
+    return render_template("index.html", sp=sp)
 
 
 @app.route('/scraping', methods=["GET", "POST"])
@@ -34,7 +37,6 @@ def learning():
     station = request.form.get('far_from_station')
     age = request.form.get('age')
     price = request.form.get('price')
-
 
     controller.main(float(station), float(age), float(price))
 

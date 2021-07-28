@@ -2,26 +2,31 @@
 
 {% block body %}
 
-
         <div class="container overflow-hidden">
             <form method="POST" action="/learning">
                   <p class="fs-3">{{end_info}}</p>
-                    <input type="text" name="far_from_station" class="form-control" placeholder="far_from_station">
-                    <input type="text" name="age" class="form-control" placeholder="age">
-                    <input type="text" name="price" class="form-control" placeholder="price">
-                  <div class="row gy-5">
-                    <div class="col-6">
-                        <button type="submit" class="btn btn-success">Start Learning</button>
-                    </div>
-                  </div>
+                <div class="form-group">
+                    <label>駅徒歩</label>
+                        <input type="text" name="far_from_station" class="form-control" placeholder="15.0" value="15.0"><br>
+                    <label>築年数</label>
+                        <input type="text" name="age" class="form-control" placeholder="29.0" value="29.0"><br>
+                    <label>家賃(万円)</label>
+                        <input type="text" name="price" class="form-control" placeholder="8.3" value="8.3"><br><br>
+                      <div class="row gy-5">
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-success">Start Learning</button>
+                        </div>
+                      </div>
+                </div>
             </form>
+        </div>
 
+        <div class="container overflow-hidden">
             <form method="POST" action="/show_plot">
               <button type="submit" class="btn btn-info">Show plot</button>
             </form>
-
-
         </div>
+
         {% if show_flg%}
         <img id='spectrum' src='data:image/png;base64,{{ sp }}'>
         {% endif %}
