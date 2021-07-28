@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block body %}
+        <form method="POST" action="/scraping">
+
+            <div class="container overflow-hidden">
+              <p class="fs-3">url</p>
+              <div class="row gy-5">
+                <div class="col-6">
+                  <input type="text" name="target_url" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="col-6">
+                  <button type="submit" class="btn btn-primary">Start Scraping</button>
+                </div>
+              </div>
+            </div>
+
+        </form>
+{% endblock %}}

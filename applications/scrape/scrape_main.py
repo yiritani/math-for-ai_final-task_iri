@@ -97,7 +97,7 @@ def generate_csv(csvList: List[Tuple[Any, Any, float, float, float]], file):
 
 def scrape_main_func(target_url):
     file_name = initializing_model_data()
-    print("*"*55,target_url)
+    # print("*"*55,target_url)
     for page_num in range(1, 100):
         suumo_html = get_hyper_text_mark_up_text(target_url, page_num)
         rows = create_data(suumo_html)
@@ -109,6 +109,6 @@ def scrape_main_func(target_url):
             break
 
         print(f'=== page {page_num} done ===')
+
         break
-        time.sleep(10)
-        # break
+        time.sleep(1)
