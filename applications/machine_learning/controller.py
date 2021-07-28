@@ -1,4 +1,4 @@
-from utils import data_processing, calc, show_plot
+from .utils import data_processing, calc, show_plot
 from pathlib import Path
 import yaml
 
@@ -7,7 +7,8 @@ with open(str(path) + '/utils/config/config.yml') as yml:
     config = yaml.safe_load(yml)
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
+def main():
     # ベースとなる散布図と回帰直線の生成開始
     # 駅徒歩 + 築年数　と　家賃を返してもらう
     x1, yt = data_processing.generate_predict_model()

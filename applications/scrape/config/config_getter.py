@@ -6,13 +6,13 @@ import yaml
 
 path = Path(__file__).parent
 with open(str(path) + '/config.yml') as yml:
-    config = yaml.load(yml)
+    config = yaml.safe_load(yml)
 
 
 def config_initialize():
     path = Path(__file__).parent
     with open(str(path) + '/config.yml') as yml:
-        config = yaml.load(yml)
+        config = yaml.safe_load(yml)
 
     return config
 

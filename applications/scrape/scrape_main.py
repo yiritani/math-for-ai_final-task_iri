@@ -5,7 +5,7 @@ import time
 from typing import List, Tuple, Any
 from pathlib import Path
 
-from config import config_getter
+from .config import config_getter
 
 config = config_getter.config_initialize()
 path = Path(__file__).parent
@@ -29,8 +29,8 @@ def initializing_model_data() -> str:
     return file
 
 
-def get_hyper_text_mark_up_text(num: int) -> BeautifulSoup:
-    response = request.urlopen(config['MAIN_URL'] + str(num))
+def get_hyper_text_mark_up_text(target_url:str, num: int) -> BeautifulSoup:
+    response = request.urlopen(str(target_url) + str(num))
     soup = BeautifulSoup(response)
     response.close()
 
@@ -89,17 +89,17 @@ def generate_csv(csvList: List[Tuple[Any, Any, float, float, float]], file):
     config_getter.get_templates_directory()
 
     for farFrom, age, price, managementPrice, totalPrice in csvList:
-        print(farFrom, age, price, managementPrice, totalPrice)
+        # print(farFrom, age, price, managementPrice, totalPrice)
         with open(file, 'a') as f:
             writer = csv.writer(f)
             writer.writerow([farFrom, age, price, managementPrice, totalPrice])
 
 
-def scrape_main_func():
+def scrape_main_func(target_url):
     file_name = initializing_model_data()
-
+    print("*"*55,target_url)
     for page_num in range(1, 100):
-        suumo_html = get_hyper_text_mark_up_text(page_num)
+        suumo_html = get_hyper_text_mark_up_text(target_url, page_num)
         rows = create_data(suumo_html)
 
         generate_csv(rows, file_name)
@@ -109,5 +109,6 @@ def scrape_main_func():
             break
 
         print(f'=== page {page_num} done ===')
-
+        break
         time.sleep(10)
+        # break
