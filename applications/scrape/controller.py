@@ -1,5 +1,5 @@
-import csv_backup
-import scrape_main
+from . import csv_backup
+from . import scrape_main
 
 if __name__ == '__main__':
     csv_backup.backup_csv_file()

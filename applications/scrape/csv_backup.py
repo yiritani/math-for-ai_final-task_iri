@@ -2,7 +2,7 @@ import os
 import datetime
 import glob
 import shutil
-from config import config_getter
+from .config import config_getter
 
 config = config_getter.config_initialize()
 resource_filename = config['FILE']['BACKUP_FILE_NAME']

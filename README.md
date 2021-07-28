@@ -76,48 +76,10 @@ TOP ディレクトリ<br>
 docker compose up -d --build
 ```
 
-2.学習モデル作成 & プロットのpngをコンテナ内に出力
-```
-docker run math-for-ai_iritani_last-task python applications/ML_learning/controller.py
-```
-
-3.コンテナ内に出力されたpngのプロットをローカルにコピーし、表示する
-```
-docker cp `docker ps | grep iri-container_math-for-ai | awk '{print $1}'`:/root/applications/ML_learning/output/ScatterRegression.png . ; open ScatterRegression.png
-```
-
 ***
 <a id="scrape_howto"></a>
 ## <u>スクレイパー使用方法</u>
 ※デフォルトでインプット用のcsvを配置しているので、実施は必須ではない。
 #### コマンドは全てコンテナ内で実行する想定
-
-1.コンテナ作成<br>
-```
-docker compose up -d --build
-```
-
-2.コンテナに入る
-```
-docker exec -i -t iri-container_math-for-ai bash
-```
-
-3.suumoで部屋一覧を表示し、"2ページ目の"URLをコピー<br>
-　「部屋ごとの表示」を選択すること
-![Screen Shot 2021-07-26 at 18 29 19](https://user-images.githubusercontent.com/74131902/126967112-9b4a5212-be44-4950-a0e8-eb7528dadf62.png)
-URL例：https://suumo.jp/jj/chintai/ichiran/FR301FC005/?shkr1=03&cb=0.0&shkr3=03&rn=0005&shkr2=03&mt=9999999&ar=030&bs=040&shkr4=03&ct=9999999&ra=013&ek=000525620&cn=9999999&mb=0&fw2=&et=9999999&page=
-<br>※最後のページ番号は削除すること
-
-4.config.yml1行目のURLを書き換える
-```
-vi applications/scrape/config/config.yml
-```
-
-5.scrape実行
-```
-python applications/scrape/controller.py
-```
-
-'END'がstdoutに表示されたら終了
 
 
