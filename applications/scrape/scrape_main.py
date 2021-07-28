@@ -110,5 +110,5 @@ def scrape_main_func(target_url):
 
         print(f'=== page {page_num} done ===')
 
-        break
-        time.sleep(1)
+        # break
+        time.sleep(3)

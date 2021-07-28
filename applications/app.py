@@ -32,6 +32,11 @@ def scrape():
     return render_template("learn.html", end_info='Scrape done!')
 
 
+@app.route('/learning_before', methods=["GET", "POST"])
+def learning_before():
+    return render_template("learn.html", end_info='')
+
+
 @app.route('/learning', methods=["GET", "POST"])
 def learning():
     station = request.form.get('far_from_station')
