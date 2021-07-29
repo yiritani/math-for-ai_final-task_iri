@@ -105,10 +105,10 @@ def scrape_main_func(target_url):
         generate_csv(rows, file_name)
 
         if len(rows) <= 0:
-            print('END')
+            print('\033[31m'+'END'+'\033[0m')
             break
 
-        print(f'=== page {page_num} done ===')
+        print('\033[31m'+f'=== page {page_num} done ==='+'\033[0m')
 
         # break
         time.sleep(3)

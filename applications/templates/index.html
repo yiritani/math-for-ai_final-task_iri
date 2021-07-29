@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 
 {% block body %}
-        <form method="POST" action="/scraping">
-            <h4>スクレイプは時間がかかります。Plot画面に行くととりあえずプロットは表示されます。</h4>
 
-            <div class="container overflow-hidden">
+        <form method="POST" action="/scraping">
+            <br>
+<!--            <h5>スクレイプは時間がかかります。Plot画面に行くととりあえずプロットは表示されます。</h5>-->
+
+            <div class="container">
               <div class="row gy-5">
                 <div class="col-6">
-                <label>URL</label>
-                  <input type="text" name="target_url" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="https://suumo.jp/jj/chintai/ichiran/FR301FC005/?ar=030&bs=040&ra=012&rn=0025&ek=002504690&ek=002538520&ek=002529360&cb=0.0&ct=9999999&mb=0&mt=9999999&md=06&et=9999999&cn=9999999&shkr1=03&shkr2=03&shkr3=03&shkr4=03&sngz=&po1=25&po2=99&pc=100&page="><br>
+                <label class="form-label">URL</label>
+                  <input type="text" name="target_url" class="form-control" required aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="https://suumo.jp/jj/chintai/ichiran/FR301FC005/?ar=030&bs=040&ra=012&rn=0025&ek=002504690&ek=002538520&ek=002529360&cb=0.0&ct=9999999&mb=0&mt=9999999&md=06&et=9999999&cn=9999999&shkr1=03&shkr2=03&shkr3=03&shkr4=03&sngz=&po1=25&po2=99&pc=100&page="><br>
                 </div>
+               </div>
+               <div class="row gy-5">
                 <div class="col-6">
-                    <br>
                   <button type="submit" class="btn btn-primary">Start Scraping</button>
                 </div>
               </div>
@@ -24,7 +27,7 @@
                 2ページ目のURLから最後のページ番号を削除し、テキストボックスに入力
             </p>
 
-            <img id='spectrum' src='data:image/png;base64,{{ sp }}'>
+            <img id='spectrum' src='data:image/png;base64,{{ sp }}', width="400", height="350">
         </div>
 
 

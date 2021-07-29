@@ -7,7 +7,6 @@ with open(str(path) + '/utils/config/config.yml') as yml:
     config = yaml.safe_load(yml)
 
 
-# if __name__ == '__main__':
 def main(far_from_station, age, price):
     # ベースとなる散布図と回帰直線の生成開始
     # 駅徒歩 + 築年数　と　家賃を返してもらう
@@ -27,10 +26,6 @@ def main(far_from_station, age, price):
 
     # 回帰直線のスタートと終了地点を生成
     reg_start, reg_end = calc.generate_regression_line(normalized_x, w)
-
-    # home_station = float(input('How many minutes is your house from the station? '))
-    # home_age = float(input('How old is your house?' ))
-    # home_price = float(input('How price is your house? '))
 
     # 我が家の条件正規化
     my_home_normalized_x = ((far_from_station / 2.0) + age - mean_x) / std_x
