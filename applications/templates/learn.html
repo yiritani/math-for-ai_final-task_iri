@@ -2,7 +2,7 @@
 
 {% block body %}
 
-        <div class="container overflow-hidden">
+        <div class="container">
             <form method="POST" action="/learning">
                   <p class="fs-3">{{end_info}}</p>
                 <div class="form-group">
@@ -10,20 +10,22 @@
                         <input type="text" name="far_from_station" class="form-control" placeholder="15.0" value="15.0"><br>
                     <label>築年数</label>
                         <input type="text" name="age" class="form-control" placeholder="29.0" value="29.0"><br>
-                    <label>家賃(万円)</label>
+                    <label>家賃(万円) ※管理費込み</label>
                         <input type="text" name="price" class="form-control" placeholder="8.3" value="8.3"><br><br>
                       <div class="row gy-5">
                         <div class="col-6">
-                            <button type="submit" class="btn btn-success">Start Learning</button>
+                            <button type="submit" class="btn btn-success">Start Learning</button><br>
                         </div>
                       </div>
                 </div>
             </form>
         </div>
 
-        <div class="container overflow-hidden">
+        <br>
+
+        <div class="container">
             <form method="POST" action="/show_plot">
-              <button type="submit" class="btn btn-info">Show plot</button>
+              <button type="submit" class="btn btn-outline-danger">Show plot</button>
             </form>
         </div>
 

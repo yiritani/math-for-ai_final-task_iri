@@ -14,6 +14,7 @@ def show_scatter_regression(x, yt, xl, yl, my_home_x=None, my_home_y=None):
     plt.xlabel('FarFromStation + Age', fontsize=14)
     plt.ylabel('TotalPrice', fontsize=14)
     plt.plot(xl[:, 1], yl, c='k')
+    plt.title('Is the price of your home reasonable?')
 
     # dockerではshow()を使うのが面倒くさいからpngを保存する
     plt.savefig(config_getter.get_png_file_path() + config['FILE']['PNG_FILE_NAME'])

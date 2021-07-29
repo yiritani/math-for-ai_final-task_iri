@@ -16,7 +16,7 @@ def red():
 
 @app.route("/index", methods=["GET", "POST"])
 def main_page():
-    fp = open(str(os.path.dirname(__file__)) + "/templates/img/suumo.png", "rb")
+    fp = open(str(os.path.dirname(__file__)) + "/templates/img/suumo_comment.png", "rb")
     sp = base64.b64encode(fp.read()).decode()
 
     return render_template("index.html", sp=sp)
@@ -50,11 +50,11 @@ def learning():
 
 @app.route('/show_plot', methods=["GET", "POST"])
 def show_plot():
-    print('dirname', os.path.dirname(__file__))
+    print('show_plot START')
     fp = open(str(os.path.dirname(__file__)) + "/machine_learning/output/ScatterRegression.png", "rb")
     sp = base64.b64encode(fp.read()).decode()
 
-    return render_template("learn.html", sp=sp, show_flg=True)
+    return render_template("learn.html", sp=sp, show_flg=True, end_info='Result!')
 
 
 if __name__ == "__main__":
