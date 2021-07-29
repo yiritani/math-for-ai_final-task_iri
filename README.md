@@ -3,16 +3,19 @@
 *M21W0B09_入谷雄介*
 
 1. [コンセプト](#concept)
+1. [アプリケーション使用方法](#ml_howto)
 1. [ToDo](#flow)
 1. [結果](#todo)
 1. [アプリ全体の流れ](#result)
-1. [アプリケーション使用方法](#ml_howto)
+
 
 
 
 ***
 <a id="concept"></a>
 ## <u>コンセプト</u>
+劣化版[Boston house price]です。
+
 自宅の家賃が妥当なのかどうか調査するため、最寄り駅の賃貸物件の家賃から学習モデルを作成。<br>
 散布図と線形回帰のプロットに自宅を被せて表示するプログラムを作成。<br>
 基本的には「人工知能のための数学」の講義内で教授された記法を使う。<br>
@@ -20,6 +23,27 @@
 To:赤石教授<br>
 　　jupyterファイルの作成だけだとあまりにもすぐ終わってしまったので、アプリケーションとしてpythonでスクレイプからプロット表示までを行うアプリケーション群を作成しました。(applicationsディレクトリ)<br> 
 　　処理としてはjupyterもpythonアプリケーションも全く同じなので、最終課題としての評価はjupyterファイルのみで充分かと思います。
+
+
+
+
+***
+<a id="howto"></a>
+## <u>アプリ使用方法</u>
+
+git cloneしたディレクトリでdocker composeし、コンテナ作成
+```
+docker compose up
+```
+
+<u>localhost:5000</u>をブラウザで開く
+
+or バックグラウンド実行したい場合は
+```
+docker compose up -d --build
+```
+
+
 
 ***
 <a id="todo"></a>
@@ -54,21 +78,3 @@ To:赤石教授<br>
 5.4で作成したプロットをpngで保存
 
 6.pngを画面表示する
-
-
-***
-<a id="howto"></a>
-## <u>アプリ使用方法</u>
-
-git cloneしたディレクトリでdocker composeし、コンテナ作成
-```
-docker compose up
-```
-
-<u>localhost:5000</u>をブラウザで開く
-
-or バックグラウンド実行したい場合は
-```
-docker compose up -d --build
-```
-
