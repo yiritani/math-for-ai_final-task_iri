@@ -34,9 +34,8 @@ git cloneしたディレクトリでdocker composeし、コンテナ作成
 docker compose up
 ```
 
-[localhost:5000](localhost:5000)をブラウザで開く
-[Google](https://www.google.co.jp/)
-or バックグラウンド実行したい場合は
+[localhost:5000](http://localhost:5000)をブラウザで開く<br><br>
+※バックグラウンド実行したい場合はこちらのコマンド
 ```
 docker compose up -d --build
 ```
