@@ -34,7 +34,7 @@ git cloneしたディレクトリでdocker composeし、コンテナ作成
 docker compose up
 ```
 
-<u>localhost:5000</u>をブラウザで開く
+[localhost:5000](localhost:5000)をブラウザで開く
 
 or バックグラウンド実行したい場合は
 ```
