@@ -45,20 +45,11 @@ def learning():
 
     controller.main(float(station), float(age), float(price))
 
-    print('\033[31m'+ 'show_plot START' +'\033[0m')
+    print('\033[31m' + 'show_plot START' + '\033[0m')
     fp = open(str(os.path.dirname(__file__)) + "/machine_learning/output/ScatterRegression.png", "rb")
     sp = base64.b64encode(fp.read()).decode()
 
-    return render_template("learned.html", end_info='Learning done!', sp=sp, show_flg=True)
-
-
-# @app.route('/show_plot', methods=["GET", "POST"])
-# def show_plot():
-#     print('show_plot START')
-#     fp = open(str(os.path.dirname(__file__)) + "/machine_learning/output/ScatterRegression.png", "rb")
-#     sp = base64.b64encode(fp.read()).decode()
-#
-#     return render_template("learn.html", sp=sp, show_flg=True, end_info='Result!')
+    return render_template("learned.html", end_info='Learning done!', sp=sp, show_flg=True, station=station, age=age, price=price)
 
 
 if __name__ == "__main__":
