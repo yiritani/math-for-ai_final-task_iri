@@ -8,8 +8,8 @@ DIRECTORY:
   ML_LEARNING_BASE_DIR: '/applications/machine_learning/'
 
 DATA_PROCESS:
-  ITERS: 50000
-  ALPHA: 0.01
+  ITERS: 100
+  ALPHA: 0.1
 
 MY_HOME_TERM:
   FAR_FROM_STATION: 13.0
