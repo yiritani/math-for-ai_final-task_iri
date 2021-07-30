@@ -34,7 +34,7 @@ def scrape():
 
 @app.route('/learning_before', methods=["GET", "POST"])
 def learning_before():
-    return render_template("learn.html", end_info='')
+    return render_template("learn.html")
 
 
 @app.route('/learning', methods=["GET", "POST"])

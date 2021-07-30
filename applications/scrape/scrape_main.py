@@ -29,7 +29,13 @@ def initializing_model_data() -> str:
     return file
 
 
-def get_hyper_text_mark_up_text(target_url:str, num: int) -> BeautifulSoup:
+def get_hyper_text_mark_up_text(target_url: str, num: int) -> BeautifulSoup:
+    """
+    Doing scrape
+    :param target_url:
+    :param num:
+    :return: scraped data
+    """
     response = request.urlopen(str(target_url) + str(num))
     soup = BeautifulSoup(response)
     response.close()
@@ -37,7 +43,13 @@ def get_hyper_text_mark_up_text(target_url:str, num: int) -> BeautifulSoup:
     return soup
 
 
-def create_data(soup_data):
+def generate_data(soup_data) -> List[str]:
+    """
+    Convert data on html for csv.
+
+    :param soup_data:
+    :return: csv file data
+    """
     result = []
     try:
         name = soup_data.find_all('a', class_='js-cassetLinkHref')
@@ -72,7 +84,8 @@ def create_data(soup_data):
 
             result.append((
                 # name[i].get_text(),
-                far_from_station_only_myoden[i].get_text()[far_from_station_trim_start_index: far_from_station_trim_end_index],
+                far_from_station_only_myoden[i].get_text()[
+                far_from_station_trim_start_index: far_from_station_trim_end_index],
                 age_remove_new_line[i][age_trim_start_index: age_trim_end_index],
                 price_remove_char[i],
                 management_price_list_remove_other_rows[i],
@@ -85,7 +98,13 @@ def create_data(soup_data):
         pass
 
 
-def generate_csv(csvList: List[Tuple[Any, Any, float, float, float]], file):
+def create_csv(csvList: List[Tuple[Any, Any, float, float, float]], file) -> None:
+    """
+    Generating csv file.
+    :param csvList:
+    :param file:
+    :return:
+    """
     config_getter.get_templates_directory()
 
     for farFrom, age, price, managementPrice, totalPrice in csvList:
@@ -95,20 +114,26 @@ def generate_csv(csvList: List[Tuple[Any, Any, float, float, float]], file):
             writer.writerow([farFrom, age, price, managementPrice, totalPrice])
 
 
-def scrape_main_func(target_url):
+def scrape_main_func(target_url: str) -> None:
+    """
+    Main function.
+
+    :param target_url:
+    :return:
+    """
     file_name = initializing_model_data()
     # print("*"*55,target_url)
     for page_num in range(1, 100):
         suumo_html = get_hyper_text_mark_up_text(target_url, page_num)
-        rows = create_data(suumo_html)
+        rows = generate_data(suumo_html)
 
-        generate_csv(rows, file_name)
+        create_csv(rows, file_name)
 
         if len(rows) <= 0:
-            print('\033[31m'+'END'+'\033[0m')
+            print('\033[31m' + 'END' + '\033[0m')
             break
 
-        print('\033[31m'+f'=== page {page_num} done ==='+'\033[0m')
+        print('\033[31m' + f'=== page {page_num} done ===' + '\033[0m')
 
         # break
         time.sleep(10)

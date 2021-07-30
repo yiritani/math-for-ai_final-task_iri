@@ -9,7 +9,11 @@ resource_filename = config['FILE']['BACKUP_FILE_NAME']
 MAX_FILES = 2
 
 
-def backup_csv_file():
+def backup_csv_file() -> None:
+    """
+    Csv backup to 3 generations
+    :return: None
+    """
     now = datetime.datetime.now()
 
     templates_path = config_getter.get_templates_directory()
