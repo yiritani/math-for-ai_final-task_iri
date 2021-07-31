@@ -17,12 +17,14 @@ def generate_regression_line(normalize, w):
     return xl, yl
 
 
-def initialize(x: ndarray, yt: ndarray, is_logging=False) -> ndarray:
+def initialize(x: ndarray, yt: ndarray, loops: int, base_alpha: float, is_logging=False) -> ndarray:
     M = x.shape[0]
     D = x.shape[1]
 
-    iters = config['DATA_PROCESS']['ITERS']
-    alpha = config['DATA_PROCESS']['ALPHA']
+    # iters = config['DATA_PROCESS']['ITERS']
+    iters = loops
+    # alpha = config['DATA_PROCESS']['ALPHA']
+    alpha = base_alpha
 
     w = np.ones(D)
     history = np.zeros((0, 2))

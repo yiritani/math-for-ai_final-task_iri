@@ -8,7 +8,7 @@ DIRECTORY:
   ML_LEARNING_BASE_DIR: '/applications/machine_learning/'
 
 DATA_PROCESS:
-  ITERS: 100
+  ITERS: 1000
   ALPHA: 0.1
 
 MY_HOME_TERM:

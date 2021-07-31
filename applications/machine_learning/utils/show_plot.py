@@ -12,7 +12,7 @@ def show_scatter_regression(x, yt, xl, yl, my_home_x=None, my_home_y=None):
     plt.figure(figsize=(6, 6))
     plt.scatter(x, yt, s=10, c='b')
     plt.scatter(my_home_x, my_home_y, s=100, c='r', marker="*")
-    plt.xlabel('FarFromStation + Age', fontsize=14)
+    plt.xlabel('(FarFromStation / 2) + Age', fontsize=14)
     plt.ylabel('TotalPrice', fontsize=14)
     plt.plot(xl[:, 1], yl, c='k')
     plt.title('Is the price of your home reasonable?')

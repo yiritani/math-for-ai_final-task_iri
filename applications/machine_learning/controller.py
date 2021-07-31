@@ -7,7 +7,7 @@ with open(str(path) + '/utils/config/config.yml') as yml:
     config = yaml.safe_load(yml)
 
 
-def main(far_from_station, age, price):
+def main(far_from_station, age, price, loops, alpha):
     # ベースとなる散布図と回帰直線の生成開始
     # 駅徒歩 + 築年数　と　家賃を返してもらう
     x1, yt = data_processing.generate_predict_model()
@@ -22,7 +22,7 @@ def main(far_from_station, age, price):
     inserted_axis_x = data_processing.insert_axis1(matrix_x)
 
     # 初期化処理　後続で使うため、重みベクトル「w」を返してもらう
-    w = calc.initialize(inserted_axis_x, yt)
+    w = calc.initialize(inserted_axis_x, yt, loops, alpha)
 
     # 回帰直線のスタートと終了地点を生成
     reg_start, reg_end = calc.generate_regression_line(normalized_x, w)

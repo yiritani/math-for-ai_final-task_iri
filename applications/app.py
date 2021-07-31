@@ -42,15 +42,17 @@ def learning():
     station = request.form.get('far_from_station')
     age = request.form.get('age')
     price = request.form.get('price')
+    loops = request.form.get('loops')
+    alpha = request.form.get('alpha')
 
-    controller.main(float(station), float(age), float(price))
+    controller.main(float(station), float(age), float(price), int(loops), float(alpha))
 
     print('\033[31m' + 'show_plot START' + '\033[0m')
     fp = open(str(os.path.dirname(__file__)) + "/machine_learning/output/ScatterRegression.png", "rb")
     sp = base64.b64encode(fp.read()).decode()
 
     return render_template("learned.html", end_info='Learning done!', sp=sp, show_flg=True, station=station, age=age,
-                           price=price)
+                           price=price, loops=loops, alpha=alpha)
 
 
 if __name__ == "__main__":

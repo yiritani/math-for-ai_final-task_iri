@@ -4,27 +4,29 @@
 
         <div class="container">
             <form method="POST" action="/learning">
-                  <p class="fs-3">{{end_info}}</p>
-                <div class="form-group">
-                    <label>駅徒歩</label>
-                        <input type="text" name="far_from_station" class="form-control" placeholder="15" value="15" required><br>
-                    <label>築年数</label>
-                        <input type="text" name="age" class="form-control" placeholder="29" value="29" required><br>
-                    <label>家賃(万円) ※管理費込み</label>
-                        <input type="text" name="price" class="form-control" placeholder="8.3" value="8.3" required><br><br>
-                      <div class="row gy-5">
-                        <div class="col-6">
-                            <button type="submit" class="btn btn-success">Start Learning</button><br>
-                        </div>
-                      </div>
+                <p class="fs-3"></p>
+                <div class="row">
+                    <div class="form-group col-sm-11 col-md-4">
+                        <label>駅徒歩</label>
+                            <input type="text" name="far_from_station" class="form-control" placeholder="15" value="15" required><br>
+                        <label>築年数</label>
+                            <input type="text" name="age" class="form-control" placeholder="29" value="29" required><br>
+                        <label>家賃(万円) ※管理費込み</label>
+                            <input type="text" name="price" class="form-control" placeholder="8.3" value="8.3" required><br><br>
+                          <div class="row gy-5">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-success">Start Learning</button><br>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="form-group col-sm-11 col-md-4">
+                        <label>ループ回数</label>
+                            <input type="text" name="loops" class="form-control" placeholder="1000" value="1000" required><br>
+                        <label>学習率</label>
+                            <input type="text" name="alpha" class="form-control" placeholder="0.1" value="0.1" required><br>
+                    </div>
                 </div>
             </form>
         </div>
-
-        <br>
-
-        {% if show_flg%}
-        <img id='spectrum' src='data:image/png;base64,{{ sp }}'>
-        {% endif %}
 
 {% endblock %}}

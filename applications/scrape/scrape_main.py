@@ -136,4 +136,4 @@ def scrape_main_func(target_url: str) -> None:
         print('\033[31m' + f'=== page {page_num} done ===' + '\033[0m')
 
         # break
-        time.sleep(10)
+        time.sleep(5)
