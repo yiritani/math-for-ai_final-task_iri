@@ -24,7 +24,7 @@ To:A教授<br>
 
 ***
 <a id="howto"></a>
-## <u>アプリ使用方法</u>
+## <u>以下、アプリ使用方法<br>(jupyterファイルは何もしなくても開けます)</u>
 
 git cloneしたディレクトリでdocker composeし、コンテナ作成
 ```
