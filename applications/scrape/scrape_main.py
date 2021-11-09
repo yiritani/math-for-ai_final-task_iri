@@ -43,7 +43,7 @@ def get_hyper_text_mark_up_text(target_url: str, num: int) -> BeautifulSoup:
     return soup
 
 
-def generate_data(soup_data) -> List[str]:
+def generate_data(soup_data) -> List[Tuple[Any, Any, float, float, float]]:
     """
     Convert data on html for csv.
 
@@ -79,13 +79,18 @@ def generate_data(soup_data) -> List[str]:
             far_from_station_trim_start_index = far_from_station_only_myoden[i].get_text().rfind('歩') + 1
             far_from_station_trim_end_index = far_from_station_only_myoden[i].get_text().rfind('分')
 
+            far_from_station = far_from_station_only_myoden[i].get_text()[
+                               far_from_station_trim_start_index: far_from_station_trim_end_index]
+
+            if far_from_station.isdecimal() is False:
+                continue
+
             age_trim_start_index = age_remove_new_line[i].rfind('築') + 1
             age_trim_end_index = age_remove_new_line[i].rfind('年')
 
             result.append((
                 # name[i].get_text(),
-                far_from_station_only_myoden[i].get_text()[
-                far_from_station_trim_start_index: far_from_station_trim_end_index],
+                far_from_station,
                 age_remove_new_line[i][age_trim_start_index: age_trim_end_index],
                 price_remove_char[i],
                 management_price_list_remove_other_rows[i],
@@ -136,4 +141,4 @@ def scrape_main_func(target_url: str) -> None:
         print('\033[31m' + f'=== page {page_num} done ===' + '\033[0m')
 
         # break
-        time.sleep(5)
+        time.sleep(1)
