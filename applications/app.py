@@ -35,6 +35,7 @@ def scrape():
 
     csv_backup.backup_csv_file()
     scrape_main.scrape_main_func(target_url)
+
     log.info(Trace.execution_location(), ' END')
 
     return render_template("learn.html", end_info='Scrape done!')
@@ -61,7 +62,7 @@ def learning():
     fp = open(str(os.path.dirname(__file__)) + "/machine_learning/output/ScatterRegression.png", "rb")
     sp = base64.b64encode(fp.read()).decode()
 
-    log.info(Trace.execution_location(), f'sp={sp}, show_flg=True, station={station}, age={age}, '
+    log.info(Trace.execution_location(), f'station={station}, age={age}, '
                                          f'price={price}, loops={loops}, alpha={alpha}')
     log.info(Trace.execution_location(), ' END')
 
