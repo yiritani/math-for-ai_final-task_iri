@@ -3,7 +3,7 @@ services:
   iritani_last-task:
     restart: always
     build: .
-    container_name: 'iri-container_math-for-ai'
+    container_name: 'iri-container_computer-programing'
     working_dir: '/root'
     tty: true
     volumes:

@@ -6,7 +6,9 @@ from datetime import datetime
 
 class Logger():
     def __init__(self):
-        filename = 'log/{:%Y-%m-%d}.log'.format(datetime.now())
+        for name in ["boto3", "botocore", "s3transfer", "urllib3", "werkzeug", "matplotlib.font_manager"]:
+            logging.getLogger(name).setLevel(logging.WARNING)
+        filename = 'applications/log/{:%Y-%m-%d}.log'.format(datetime.now())
         logging.basicConfig(level=logging.DEBUG,
                             format="[%(asctime)s] [%(process)d] [%(name)s] [%(levelname)s] %(message)s",
                             filename=filename
