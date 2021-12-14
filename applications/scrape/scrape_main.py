@@ -113,6 +113,8 @@ def create_csv(csvList: List[Tuple[Any, Any, float, float, float]], file) -> Non
     config_getter.get_templates_directory()
 
     for farFrom, age, price, managementPrice, totalPrice in csvList:
+        if int(farFrom) >= 60:
+            continue
         # print(farFrom, age, price, managementPrice, totalPrice)
         with open(file, 'a') as f:
             writer = csv.writer(f)

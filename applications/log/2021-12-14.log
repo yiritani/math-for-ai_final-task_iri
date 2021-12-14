@@ -1,0 +1,73 @@
+[2021-12-14 18:01:34,804] [1] [werkzeug] [WARNING]  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+[2021-12-14 18:01:35,592] [15] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:01:39,635] [15] [app.py:22 main_page] [INFO]  START
+[2021-12-14 18:01:39,658] [15] [app.py:26 main_page] [INFO]  END
+[2021-12-14 18:01:40,857] [23] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:01:47,394] [23] [app.py:22 main_page] [INFO]  START
+[2021-12-14 18:01:47,400] [23] [app.py:33 scrape] [INFO]  START
+[2021-12-14 18:01:47,404] [23] [app.py:26 main_page] [INFO]  END
+[2021-12-14 18:03:17,163] [23] [app.py:39 scrape] [INFO]  END
+[2021-12-14 18:03:22,031] [23] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:03:22,351] [23] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:03:22,353] [23] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:06:47,129] [33] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:06:56,576] [33] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:06:56,827] [33] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:06:56,828] [33] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:07:11,686] [41] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:07:21,161] [47] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:07:21,758] [47] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:07:22,084] [47] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:07:22,086] [47] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:07:32,456] [55] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:07:37,972] [61] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:07:38,465] [61] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:07:38,741] [61] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:07:38,742] [61] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:07:42,171] [61] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:07:42,428] [61] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:07:42,429] [61] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:08:05,541] [70] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:08:49,685] [76] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:08:49,764] [76] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:08:50,044] [76] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:08:50,045] [76] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:08:53,578] [76] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:08:53,830] [76] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:08:53,831] [76] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:09:06,420] [85] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:09:06,454] [85] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:09:06,747] [85] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:09:06,748] [85] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:09:50,574] [93] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:09:50,907] [93] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:09:51,424] [93] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:09:51,425] [93] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:10:04,837] [101] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:10:09,018] [107] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:10:09,044] [107] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:10:09,503] [107] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:10:09,504] [107] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:11:22,759] [115] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:11:58,914] [121] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:11:59,219] [121] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:11:59,532] [121] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:11:59,534] [121] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:15:37,757] [129] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:15:37,780] [129] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:15:38,109] [129] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:15:38,111] [129] [app.py:67 learning] [INFO]  END
+[2021-12-14 18:15:39,551] [129] [app.py:22 main_page] [INFO]  START
+[2021-12-14 18:15:39,557] [129] [app.py:26 main_page] [INFO]  END
+[2021-12-14 18:15:40,462] [129] [app.py:22 main_page] [INFO]  START
+[2021-12-14 18:15:40,467] [129] [app.py:33 scrape] [INFO]  START
+[2021-12-14 18:15:40,468] [129] [app.py:26 main_page] [INFO]  END
+[2021-12-14 18:15:53,292] [144] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 18:15:53,623] [144] [app.py:22 main_page] [INFO]  START
+[2021-12-14 18:15:53,628] [144] [app.py:33 scrape] [INFO]  START
+[2021-12-14 18:15:53,631] [144] [app.py:26 main_page] [INFO]  END
+[2021-12-14 18:17:11,790] [144] [app.py:39 scrape] [INFO]  END
+[2021-12-14 18:17:40,173] [144] [app.py:51 learning] [INFO]  START
+[2021-12-14 18:17:40,442] [144] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 18:17:40,443] [144] [app.py:67 learning] [INFO]  END

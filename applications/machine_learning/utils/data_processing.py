@@ -17,7 +17,9 @@ def generate_predict_model():
 
     true_data = csv_data[:, feature_names == 'TotalPrice']
     true_data = np.array([i[0] for i in true_data])
-
+    aaa = [i for i in learning_data]
+    aaa.sort()
+    print(aaa)
     return learning_data, true_data
 
 
