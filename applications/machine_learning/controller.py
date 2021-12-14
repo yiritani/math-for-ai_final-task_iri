@@ -1,4 +1,4 @@
-from .utils import data_processing, calc, show_plot
+from .utils import data_processing, linear_calc, show_plot
 from pathlib import Path
 import yaml
 
