@@ -1,3 +1,5 @@
+from typing import Tuple
+
 import numpy as np
 from numpy import ndarray
 
@@ -6,11 +8,11 @@ from .config import config_getter
 config = config_getter.config_initialize()
 
 
-def pred(x, w):
+def pred(x, w) -> float:
     return x @ w
 
 
-def generate_regression_line(normalize, w):
+def generate_regression_line(normalize, w) -> tuple[ndarray, float]:
     xl = np.array([[1, normalize.min()], [1, normalize.max()]])
     yl = pred(xl, w)
 

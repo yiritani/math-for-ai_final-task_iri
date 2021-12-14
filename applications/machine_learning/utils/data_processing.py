@@ -1,9 +1,12 @@
+from typing import Tuple, Optional, Any
+
 import numpy as np
+from numpy import ndarray
 
 from .config import config_getter
 
 
-def generate_predict_model():
+def generate_predict_model() -> tuple[ndarray, ndarray]:
     with open(config_getter.get_price_file_path(), 'r') as fd:
         feature_names = np.array(fd.read().split('\n')[0].split(','))
 
@@ -18,16 +21,16 @@ def generate_predict_model():
     return learning_data, true_data
 
 
-def normalize(target_param):
+def normalize(target_param) -> tuple[Any, ndarray, ndarray]:
     target_param_mean = np.mean(target_param)
     target_param_std = np.std(target_param)
 
     return (target_param - target_param_mean) / target_param_std, target_param_mean, target_param_std
 
 
-def convert_matrix_variable(target_param):
+def convert_matrix_variable(target_param) -> ndarray:
     return np.reshape(target_param, (-1,1))
 
 
-def insert_axis1(target_param):
+def insert_axis1(target_param) -> ndarray:
     return np.insert(target_param, 0, 1.0, axis=1)
