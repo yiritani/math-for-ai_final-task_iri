@@ -6,7 +6,7 @@ from numpy import ndarray
 from .config import config_getter
 
 
-def generate_predict_model() -> tuple[ndarray, ndarray]:
+def generate_predict_model():
     with open(config_getter.get_price_file_path(), 'r') as fd:
         feature_names = np.array(fd.read().split('\n')[0].split(','))
 
@@ -21,7 +21,7 @@ def generate_predict_model() -> tuple[ndarray, ndarray]:
     return learning_data, true_data
 
 
-def normalize(target_param) -> tuple[Any, ndarray, ndarray]:
+def normalize(target_param):
     target_param_mean = np.mean(target_param)
     target_param_std = np.std(target_param)
 
