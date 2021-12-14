@@ -22,10 +22,10 @@ def main(far_from_station, age, price, loops, alpha):
     inserted_axis_x = data_processing.insert_axis1(matrix_x)
 
     # 初期化処理　後続で使うため、重みベクトル「w」を返してもらう
-    w = calc.initialize(inserted_axis_x, yt, loops, alpha)
+    w = linear_calc.initialize(inserted_axis_x, yt, loops, alpha)
 
     # 回帰直線のスタートと終了地点を生成
-    reg_start, reg_end = calc.generate_regression_line(normalized_x, w)
+    reg_start, reg_end = linear_calc.generate_regression_line(normalized_x, w)
 
     # 我が家の条件正規化
     my_home_normalized_x = ((far_from_station / 2.0) + age - mean_x) / std_x
