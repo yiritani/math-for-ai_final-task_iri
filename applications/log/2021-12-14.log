@@ -1,0 +1,33 @@
+[2021-12-14 17:40:12,645] [1] [werkzeug] [WARNING]  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+[2021-12-14 17:40:13,301] [12] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 17:40:28,044] [1] [werkzeug] [WARNING]  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+[2021-12-14 17:40:28,715] [14] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 17:40:37,693] [14] [app.py:22 main_page] [INFO]  START
+[2021-12-14 17:40:37,703] [14] [app.py:26 main_page] [INFO]  END
+[2021-12-14 17:40:39,315] [14] [app.py:22 main_page] [INFO]  START
+[2021-12-14 17:40:39,320] [14] [app.py:33 scrape] [INFO]  START
+[2021-12-14 17:40:39,324] [14] [app.py:26 main_page] [INFO]  END
+[2021-12-14 17:42:46,135] [14] [app.py:22 main_page] [INFO]  START
+[2021-12-14 17:42:46,137] [14] [app.py:33 scrape] [INFO]  START
+[2021-12-14 17:42:46,141] [14] [app.py:26 main_page] [INFO]  END
+[2021-12-14 17:44:31,352] [35] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 17:45:14,064] [35] [app.py:22 main_page] [INFO]  START
+[2021-12-14 17:45:14,072] [35] [app.py:33 scrape] [INFO]  START
+[2021-12-14 17:45:14,079] [35] [app.py:26 main_page] [INFO]  END
+[2021-12-14 17:46:35,311] [35] [app.py:39 scrape] [INFO]  END
+[2021-12-14 17:46:46,322] [35] [app.py:51 learning] [INFO]  START
+[2021-12-14 17:47:16,775] [49] [werkzeug] [WARNING]  * Debugger is active!
+[2021-12-14 17:47:19,624] [49] [app.py:51 learning] [INFO]  START
+[2021-12-14 17:47:19,977] [49] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 17:47:19,978] [49] [app.py:67 learning] [INFO]  END
+[2021-12-14 17:47:38,544] [49] [app.py:51 learning] [INFO]  START
+[2021-12-14 17:47:38,795] [49] [app.py:65 learning] [INFO] station=15, age=29, price=8.3, loops=1000, alpha=0.1
+[2021-12-14 17:47:38,796] [49] [app.py:67 learning] [INFO]  END
+[2021-12-14 17:47:41,329] [49] [app.py:22 main_page] [INFO]  START
+[2021-12-14 17:47:41,334] [49] [app.py:26 main_page] [INFO]  END
+[2021-12-14 17:47:44,124] [49] [app.py:22 main_page] [INFO]  START
+[2021-12-14 17:47:44,130] [49] [app.py:26 main_page] [INFO]  END
+[2021-12-14 17:47:44,131] [49] [app.py:33 scrape] [INFO]  START
+[2021-12-14 17:49:04,442] [49] [app.py:39 scrape] [INFO]  END
