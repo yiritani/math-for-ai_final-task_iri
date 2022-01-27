@@ -88,10 +88,14 @@ def generate_data(soup_data) -> List[Tuple[Any, Any, float, float, float]]:
             age_trim_start_index = age_remove_new_line[i].rfind('築') + 1
             age_trim_end_index = age_remove_new_line[i].rfind('年')
 
+            age = age_remove_new_line[i][age_trim_start_index: age_trim_end_index]
+            if not age:
+                age = 0.0
+
             result.append((
                 # name[i].get_text(),
                 far_from_station,
-                age_remove_new_line[i][age_trim_start_index: age_trim_end_index],
+                age,
                 price_remove_char[i],
                 management_price_list_remove_other_rows[i],
                 price_remove_char[i] + management_price_list_remove_other_rows[i]
