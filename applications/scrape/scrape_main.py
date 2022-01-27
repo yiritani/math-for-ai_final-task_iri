@@ -90,7 +90,7 @@ def generate_data(soup_data) -> List[Tuple[Any, Any, float, float, float]]:
 
             age = age_remove_new_line[i][age_trim_start_index: age_trim_end_index]
             if not age:
-                age = 0.0
+                continue
 
             result.append((
                 # name[i].get_text(),
@@ -139,7 +139,6 @@ def scrape_main_func(target_url: str) -> None:
         rows = generate_data(suumo_html)
 
         create_csv(rows, file_name)
-
         if len(rows) <= 0:
             print('\033[31m' + 'END' + '\033[0m')
             break
