@@ -6,6 +6,7 @@
 [コードレビュー動画2](https://www.youtube.com/watch?v=OEvD9gSWf20&t=57s)<br>
 mainリポジトリはレビュー内容未反映です
 
+<hr>
 
 *M21W0B09*
 
