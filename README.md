@@ -1,5 +1,11 @@
 # 人工知能のための数学 最終レポート
 
+<シリコンバレーエンジニアの酒井潤さんにコードレビューしていただきました！><br>
+[コードレビュー動画1](https://www.youtube.com/watch?v=TTatRa6fjIA&t=311s)<br>
+[コードレビュー動画2](https://www.youtube.com/watch?v=OEvD9gSWf20&t=57s)<br>
+mainリポジトリはレビュー内容未反映です
+
+
 *M21W0B09*
 
 1. [コンセプト](#concept)
