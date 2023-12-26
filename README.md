@@ -1,6 +1,7 @@
 # 人工知能のための数学 最終レポート
 
 <シリコンバレーエンジニアの酒井潤さんにコードレビューしていただきました！><br>
+![Screenshot 2023-12-26 at 11.47.37.png](..%2F..%2FDesktop%2FScreenshot%202023-12-26%20at%2011.47.37.png)
 [コードレビュー動画1](https://www.youtube.com/watch?v=TTatRa6fjIA&t=311s)<br>
 [コードレビュー動画2](https://www.youtube.com/watch?v=OEvD9gSWf20&t=57s)<br>
 mainリポジトリはレビュー内容未反映です
